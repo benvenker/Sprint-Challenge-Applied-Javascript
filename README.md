@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+  The Document Object Mode: a JSON representation of the HTML document
+
 2. What is an event?
+
+  Something that occurs on a web page / on the DOM. For example, a click, a mouseover, a keyDown, etc.
 
 3. What is an event listener?
 
+  Literally code on a piece of the DOM that "listens" for a given event.
+
 4. Why would we convert a NodeList into an Array?
 
+  So we can use array methods on them
+
 5. What is a component?
+
+  A reusable piece of code that generates DOM elements
 
 ### Git Set up
 
