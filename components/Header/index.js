@@ -25,4 +25,14 @@ function Header() {
   const temp = document.createElement("span");
   temp.classList.add("temp");
   temp.textContent = "98º";
+
+  // Assemble into component
+  const headerContainer = document.querySelector(".header-container");
+
+  headerContainer.appendChild(header);
+  header.appendChild(date);
+  header.appendChild(h1);
+  header.appendChild(temp);
 }
+
+Header();
