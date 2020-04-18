@@ -64,11 +64,19 @@ function makeCarousel() {
 
   rightButton.addEventListener("click", (e) => {
     toggleSlide(true);
+    // nextImage();
   });
 
   leftButton.addEventListener("click", (e) => {
     toggleSlide(false);
   });
+
+  function nextImage() {
+    console.log("next image");
+    // images[currentIndex].className = "image";
+    currentIndex = (currentIndex + 1) % images.length;
+    images[currentIndex].display = "block";
+  }
 
   function toggleSlide(direction) {
     let visibleID = getVisible(images);
@@ -86,6 +94,7 @@ function makeCarousel() {
     let visibleID = -1;
     for (let i = 0; i < images.length; i++) {
       if (images[i].style.display !== "none") {
+        console.log(images[i]);
         visibleID = i;
       }
     }
