@@ -49,11 +49,18 @@ function makeCarousel() {
   carousel.appendChild(image3);
   carousel.appendChild(image4);
   carousel.appendChild(rightButton);
+
+  // get all of the images
+  const images = document.querySelectorAll("img");
+  console.log(images);
+  // event handlers
+  rightButton.addEventListener("click", (e) => {
+    console.log(e.target);
+  });
+
+  leftButton.addEventListener("click", (e) => {
+    console.log(e.target);
+  });
 }
 
 makeCarousel();
-
-// function imageMaker(iamgeUrl) {
-//   const image = document.createElement("img");
-//   image.src = imageUrl;
-// }
