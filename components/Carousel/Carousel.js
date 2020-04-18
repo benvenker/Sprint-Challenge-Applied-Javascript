@@ -30,15 +30,19 @@ function makeCarousel() {
 
   const image1 = document.createElement("img");
   image1.src = "./assets/carousel/mountains.jpeg";
+  image1.id = 1;
 
   const image2 = document.createElement("img");
   image2.src = "./assets/carousel/computer.jpeg";
+  image2.id = 2;
 
   const image3 = document.createElement("img");
   image3.src = "./assets/carousel/trees.jpeg";
+  image3.id = 3;
 
   const image4 = document.createElement("img");
   image4.src = "./assets/carousel/turntable.jpeg";
+  image4.id = 4;
 
   const carouselContainer = document.querySelector(".carousel-container");
 
@@ -50,12 +54,19 @@ function makeCarousel() {
   carousel.appendChild(image4);
   carousel.appendChild(rightButton);
 
+  // event handlers
+
   // get all of the images
   const images = document.querySelectorAll("img");
   console.log(images);
-  // event handlers
+
+  let currentIndex = 0;
+
   rightButton.addEventListener("click", (e) => {
-    console.log(e.target);
+    console.log(images[0]);
+    currentIndex++;
+    const currentImage = images[0];
+    currentImage.display = "block";
   });
 
   leftButton.addEventListener("click", (e) => {
