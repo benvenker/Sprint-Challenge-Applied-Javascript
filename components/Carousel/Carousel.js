@@ -63,15 +63,44 @@ function makeCarousel() {
   let currentIndex = 0;
 
   rightButton.addEventListener("click", (e) => {
-    console.log(images[0]);
-    currentIndex++;
-    const currentImage = images[0];
-    currentImage.display = "block";
+    toggleSlide(true);
   });
 
   leftButton.addEventListener("click", (e) => {
-    console.log(e.target);
+    toggleSlide(false);
   });
+
+  function toggleSlide(direction) {
+    let visibleID = getVisible(images);
+    images[visibleID].style.display = "none";
+    let makeVisible;
+    if (!direction) {
+      makeVisible = prev(visibleID, images.length);
+    } else {
+      makeVisible = next(visibleID, images.length);
+    }
+    images[makeVisible].style.display = "block";
+  }
+
+  function getVisible(images) {
+    let visibleID = -1;
+    for (let i = 0; i < images.length; i++) {
+      if (images[i].style.display !== "none") {
+        visibleID = i;
+      }
+    }
+    return visibleID;
+  }
+}
+
+function prev(num, arrayLength) {
+  if (num === 0) return arrayLength - 1;
+  else return num - 1;
+}
+
+function next(num, arrayLength) {
+  if (num === arrayLength + 1) return 0;
+  else return num + 1;
 }
 
 makeCarousel();
